@@ -1,4 +1,3 @@
-import React from 'react';
 import ScrollCirclesSquare from '../components/ScrollTree';
 import AvatarCircle from '../components/AvatarCircle';
 

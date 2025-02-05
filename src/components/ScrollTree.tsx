@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 const CircleElement = ({index, contentArray, step}: {index: number, contentArray: Array<string>, step: number}) => {
 return <div className={`rounded-full size-[180px] p-2 transform transition-all duration-1000 ${step === index ? 'scale-[110%] bg-indigo' : ' bg-sludge '}`}>
@@ -14,7 +14,6 @@ const ScrollCirclesSquare = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const scrollTreeRef = useRef<HTMLDivElement | null>(null);
 
-  const circleStyle = `rounded-full size-[125px] transform transition-all duration-1000`;
   const circleText = ['Acquire an ownership stake of the ecosystem', 'Onboard your community and create a clan', 'Organize or join events with like minded people for mutual support and growth', 'Collaborate with other leaders and talent on impact driven projects', 'participate in the governance of the collective treasury', 'Receive funding for your projects from The Soci3ty'];
 
   useEffect(() => {
