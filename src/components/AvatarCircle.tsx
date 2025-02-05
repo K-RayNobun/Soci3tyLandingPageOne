@@ -1,4 +1,3 @@
-import React from 'react'
 
 const AvatarCircle = ({avatar_url, logo_url='', name}:{avatar_url:string, logo_url?: string, name: string}) => {
   return (
