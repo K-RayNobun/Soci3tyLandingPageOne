@@ -18,16 +18,34 @@ const ScrollCirclesSquare = () => {
 
   useEffect(() => {
     const handleWheel = (e: any) => {
-      if (scrollTreeRef.current && scrollTreeRef.current.contains(e.target)) {
-        e.preventDefault(); // Prevent default page scroll
+
+        const element = scrollTreeRef.current;
+
+      if (element && element.contains(e.target)) {
+        // Get the element's position relative to the viewport
+        const rect = element.getBoundingClientRect();
+        const elementTop = window.scrollY;
+        console.log('Position is: ', elementTop);
+
+
+        let scale = 75;
+
+        if (scrollPosition <= 10000 && scrollPosition > 100) {
+          e.preventDefault(); // Prevent default page scroll
+          console.log('Prevented default event. Scale: ', scale,);
+        } else {
+          scale = 75;
+          console.log('Scrolling on Tree', scrollPosition);
+          console.log('Prevented default event. Scale: ', scale,);
+        }
 
         setScrollPosition(prevScrollPosition => {
           let newScrollPosition = prevScrollPosition;
           // Check the wheel direction and update scroll position accordingly
           if (e.deltaY > 0) {
-            newScrollPosition = Math.min(newScrollPosition + 75, 8000); // Max scroll position to trigger last circle
+            newScrollPosition = Math.min(newScrollPosition + scale, elementTop + 10000); // Max scroll position to trigger last circle
           } else if (e.deltaY < 0) {
-            newScrollPosition = Math.max(newScrollPosition - 75, 0); // Min scroll position to trigger first circle
+            newScrollPosition = Math.max(newScrollPosition - scale, elementTop); // Min scroll position to trigger first circle
           }
           return newScrollPosition;
         });
@@ -56,13 +74,13 @@ const ScrollCirclesSquare = () => {
   }, [scrollPosition]);
 
   return (
-    <div className="relative w-full bg-gray-500 overflow-visible pt-20" ref={scrollTreeRef}>
+    <div className="relative w-full overflow-visible pt-20" ref={scrollTreeRef}>
       {/* <div className="w-52 block h-full bg-gray-200 absolute flex flex-col justify-center items-center top-0 left-0">
             <h2 className='text-center text-4xl'>Score: {scrollPosition}</h2>
             <h2 className='text-center text-4xl mt-24'>Step: {activeStep}</h2>
             <CircleElement index={4} contentArray={circleText} step={activeStep} />
         </div> */}
-      <div className=' w-[65%] mx-auto flex flex-col items-center justify-center'>
+      <div className=' w-[65%] lg:w-[50%]  mx-auto flex flex-col items-center justify-center'>
     
         <div className='flex justify-between w-full mb-[-20px] z-20'>
             <CircleElement index={1} contentArray={circleText} step={activeStep} />

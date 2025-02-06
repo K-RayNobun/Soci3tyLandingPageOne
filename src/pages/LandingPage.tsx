@@ -1,12 +1,14 @@
 import ScrollCirclesSquare from '../components/ScrollTree';
 import AvatarCircle from '../components/AvatarCircle';
-import HeaderVideo from '../assets/header_video.png';
+import HeaderVideo from '/header_video.png';
+ 
+
 const LandingPage = () => {
   return (
     <>
       <main className='pb-[150px] bg-sludge -z-10 w-screen'>
         <div className='mb-16 md:mb-[100px] pt-3 md:pt-[20px]'>
-          <img className='w-[160px] md:w-[220px]' src="/src/assets/logo_name.png" alt="Society Logo" />
+          <img className='w-[160px] md:w-[220px]' src="/logo_name.png" alt="Society Logo" />
         </div>
         <section className="relative w-full z-20 px-[10%] sm:px-[15%] overflow-visible font-bold flex flex-col items-center text-center h-[600px] sm:h-[700px] md:h-[750px]">
           <div className='absolute z-20 top-[50%] left-[12%] rounded-full size-[600px] bg-gradient-radial from-blue-500 to-transparent blur-lg opacity-20'></div>
@@ -58,7 +60,7 @@ const LandingPage = () => {
           <div className='sm:w-[80%] z-10 min-w-max mx-auto rounded-lg mt-4 max-h-[500px] md:h-[580px] lg:h-[780px]'>
             <div id="thead" className='relative h-[15%] py-5 text-center min-w-full bg-black rounded-t-2xl'>
               <h3 className='text-greenie font-bold text-[28px]'>Other platforms</h3>
-              <img src="/src/assets/logo_name.png" alt="" className='absolute right-[10%] top-6 w-[180px]' />
+              <img src="/logo_name.png" alt="" className='absolute right-[10%] top-6 w-[180px]' />
             </div>
             <div className='flex h-[80%] text-white text-xl md:text-[25px] rounded-b-lg bg-gray-700 md:text-2xl font-bold justify-between gap-1'>
               <ul className='bg-black flex flex-col justify-between pt-[3%] pb-10 px-4 md:px-8 w-[28%] text-center md:text-end rounded-bl-lg'>
@@ -90,7 +92,7 @@ const LandingPage = () => {
         </section>
         <div className='w-full flex justify-center'>
           <div className='absolute z-20 top-[50%] left-[12%] rounded-full size-[600px] blur-2xl bg-greenie opacity-20'></div>
-          <img src="/src/assets/logo.png" alt="" className='w-[250px] mb-[-50px] z-20 overflow-visible' />
+          <img src="/logo.png" alt="" className='w-[180px] lg:w-[250px] mb-[-50px] z-20 overflow-visible' />
         </div>
         <section className='relative py-20 md:py-[120px] px-12 mt-[0px] min-h-max w-full flex flex-col justify-between items-center clip-curve bg-black/30 overflow'>
           <div className='absolute z-20 top-[-8%] left-[12%] rounded-full size-[60%] blur-3xl bg-indigo opacity-20'></div>
@@ -119,16 +121,16 @@ const LandingPage = () => {
             They joined us
           </h2>
           <div className='flex flex-wrap py-8 gap-[30px] justify-center w-[100%]'>
-            <AvatarCircle avatar_url='/src/assets/avatars/aldeguer.png' name='Emmanuel Aldeguer' />
-            <AvatarCircle avatar_url='/src/assets/avatars/koko.png' name='Koko ' />
-            <AvatarCircle avatar_url='/src/assets/avatars/etienne.png' name='Etienne de Sainte Marie' />
-            <AvatarCircle avatar_url='/src/assets/avatars/fabrizi.png' name='Emilie-ALice Fabrizi ' />
-            <AvatarCircle avatar_url='/src/assets/avatars/gallardo.png' name='Nico Gallardo' />
+            <AvatarCircle avatar_url='/avatars/aldeguer.png' logo_url='/logos/lottopgf.png' name='Emmanuel Aldeguer' />
+            <AvatarCircle avatar_url='/avatars/koko.png' name='Koko ' />
+            <AvatarCircle avatar_url='/avatars/etienne.png' logo_url='/logos/axone.bmp' name='Etienne de Sainte Marie' />
+            <AvatarCircle avatar_url='/avatars/fabrizi.png' name='Emilie-ALice Fabrizi ' />
+            <AvatarCircle avatar_url='/avatars/gallardo.png' name='Nico Gallardo' />
           </div>
         </section>
 
         <section className="min-h-[800px] h-max bg-greenie pt-[120px] pb-[200px] flex flex-col items-center overflow-visible" style={{ width: '100%', clipPath: 'polygon(0% 7%, 100% 0%, 100% 93%, 0% 100%)' }}>
-          <h2 className="text-sludge font-bold text-[36px] text-center md:text-[48px]">What you can do as a founder</h2>
+          <h2 className="text-sludge font-bold text-[14px] md:text-[30px] text-center ">What you can do as a founder</h2>
           <div className='h-[100%] w-[100%] flex items-center'>
             <ScrollCirclesSquare />
           </div>
@@ -136,12 +138,12 @@ const LandingPage = () => {
 
         <section className='w-full py-24 mt-12 flex flex-col items-center '>
           <div className="mt-[-340px] md:mt-[-325px] mb-[100px] z-20 w-[432px] h-auto">
-            <img src="/src/assets/coin.png" alt="" />
+            <img src="/coin.png" alt="" />
           </div>
           <div className='w-[80%] md:w-[60%] py-4 text-center flex flex-col items-center justify-center'>
             <div className='flex mb-8 md:mb-12'>
               <h2 className='text-white font-bold text-[40px] sm:text-[48px]'>You own</h2>
-              <img src="/src/assets/logo_name.png" className='md:w-[232px] w-[180px] h-auto' alt="Logo Name Unavailable" />
+              <img src="/logo_name.png" className='md:w-[232px] w-[180px] h-auto' alt="Logo Name Unavailable" />
             </div>
             <div className='text-wrap w-[80%]'>
               <p className='w-full text-white text-[20px] md:text-3xl'>
