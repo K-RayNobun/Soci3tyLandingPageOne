@@ -1,5 +1,5 @@
 import LandingPage from './pages/LandingPage';
-import ScrollCirclesSquare from './components/ScrollTree';
+// import ScrollCirclesSquare from './components/ScrollTree';
 
 function App() {
 
