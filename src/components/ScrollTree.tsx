@@ -21,30 +21,26 @@ const ScrollCirclesSquare = () => {
       if (scrollTreeRef.current && scrollTreeRef.current.contains(e.target)) {
         e.preventDefault(); // Prevent default page scroll
 
-      let newScrollPosition = scrollPosition;
-      // Check the wheel direction and update scroll position accordingly
-      if (e.deltaY > 0) {
-        newScrollPosition = Math.min(newScrollPosition + 75, 8000); // Max scroll position to trigger last circle
-      } else if (e.deltaY < 0) {
-        newScrollPosition = Math.max(newScrollPosition - 75, 0); // Min scroll position to trigger first circle
-      }
-
-      setScrollPosition(newScrollPosition);
+        setScrollPosition(prevScrollPosition => {
+          let newScrollPosition = prevScrollPosition;
+          // Check the wheel direction and update scroll position accordingly
+          if (e.deltaY > 0) {
+            newScrollPosition = Math.min(newScrollPosition + 75, 8000); // Max scroll position to trigger last circle
+          } else if (e.deltaY < 0) {
+            newScrollPosition = Math.max(newScrollPosition - 75, 0); // Min scroll position to trigger first circle
+          }
+          return newScrollPosition;
+        });
+      }  
     };
 
-    if (scrollTreeRef.current) {
-        // Add wheel event listener
-        window.addEventListener('wheel', handleWheel, { passive: false });
-    }
+    window.addEventListener('wheel', handleWheel, { passive: false });
         
     // Cleanup on component unmount
     return () => {
-        if (scrollTreeRef.current) {
-            window.removeEventListener('wheel', handleWheel);
-        }
+        window.removeEventListener('wheel', handleWheel);
     };
-      }
-  }, [scrollPosition]);
+  }, []);
 
   useEffect(() => {
     // Based on scroll position, update the active circle
@@ -60,7 +56,7 @@ const ScrollCirclesSquare = () => {
   }, [scrollPosition]);
 
   return (
-    <div className="relative overflow-visible pt-20" ref={scrollTreeRef}>
+    <div className="relative w-full bg-gray-500 overflow-visible pt-20" ref={scrollTreeRef}>
       {/* <div className="w-52 block h-full bg-gray-200 absolute flex flex-col justify-center items-center top-0 left-0">
             <h2 className='text-center text-4xl'>Score: {scrollPosition}</h2>
             <h2 className='text-center text-4xl mt-24'>Step: {activeStep}</h2>

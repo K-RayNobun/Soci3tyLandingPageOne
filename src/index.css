@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .clip-curve {
+      clip-path: ellipse(100% 50% at 50% 50%);
+    }
+  }
+  
