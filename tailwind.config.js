@@ -6,6 +6,11 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'intl': ['SuisseIntl', 'sans-serif'],
+        intl: ['SuisseIntl', 'sans-serif'],
+        'blaak': ['US Blaak Black', 'sans-serif']
+      },
       colors: {
         'indigo': '#8099ec',
         'greenie': '#95ffdf',

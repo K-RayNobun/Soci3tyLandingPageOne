@@ -3,8 +3,55 @@
 @tailwind utilities;
 
 @layer utilities {
-    .clip-curve {
-      clip-path: ellipse(100% 50% at 50% 50%);
-    }
+  .clip-curve {
+    clip-path: ellipse(100% 50% at 50% 50%);
   }
+}
+
+
+/* Roboto Black */
+/*   
+@font-face {
+  font-family: 'SuisseIntl-Black';
+  src: url('/public/fonts/SuisseIntl-Black.otf') format('truetype');
+  font-weight: 400; // Black weight is typically 900 
+  font-style: normal;
+} */
+ 
+/* Suisse Intl Black */
+@font-face {
+  font-family: 'SuisseIntl';
+  src: url('/fonts/SuisseIntl-Regular') format('truetype');
+  font-weight: 400; /* Black weight is typically 900 */
+  font-style: normal;
+}
+
+/* Suisse Intl Black */
+@font-face {
+  font-family: 'SuisseIntlBold';
+  src: url('/fonts/SuisseIntl-Bold.otf') format('truetype');
+  font-weight: 900; /* Black weight is typically 900 */
+  font-style: normal;
+}
+
+/* Roboto Bold */
+@font-face {
+  font-family: 'USBlaak';
+  src: url('/fonts/US\ Blaak\ Black.otf') format('truetype');
+  font-weight: 400; /* Bold weight is typically 700 */
+  font-style: normal;
+}
+
+/* Setting Roboto Regular as the default font for the body */
+body {
+  font-family: 'SuisseIntl', sans-serif;
+  font-weight: 400;
+}
+
+.font-blaak {
+  font-family: 'USBlaak', sans-serif;
+  font-weight: 400;
+}
+
+
   
