@@ -6,6 +6,14 @@
   .clip-curve {
     clip-path: ellipse(100% 50% at 50% 50%);
   }
+
+  .clip-trapezis.lg-screen {
+    clip-path: polygon(0% 16%, 100% 0%, 100% 84%, 0% 100%);
+  }
+  
+  .clip-trapezis.sm-screen {
+    clip-path: polygon(0% 8%, 100% 0%, 100% 92%, 0% 100%);
+  } 
 }
 
 

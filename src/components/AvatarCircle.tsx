@@ -3,7 +3,7 @@ const AvatarCircle = ({avatar_url, logo_url='', name}:{avatar_url:string, logo_u
   return (
     
     <>
-        <div className='flex flex-col items-center'>
+        <div className='flex flex-col items-center my-2 md:mt-0'>
             <div className='size-[200px] md:size-[256px] rounded-full border-[5px] border-indigo  overflow-hidden'>
                 <img src={avatar_url} alt="Avatar Image not loaded" className='pbject-stretch' />
             </div>
